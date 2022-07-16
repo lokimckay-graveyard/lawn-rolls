@@ -107,12 +107,26 @@ offset_bottom = 1048.0
 mouse_filter = 2
 alignment = 2
 
-[node name="Label" type="Label" parent="Container/Footer"]
-offset_top = 984.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/Footer"]
+offset_top = 952.0
 offset_right = 1856.0
 offset_bottom = 1016.0
+
+[node name="Label" type="Label" parent="Container/Footer/HBoxContainer"]
+offset_top = 16.0
+offset_right = 181.0
+offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("1_cbowp")
 theme_override_font_sizes/font_size = 24
 text = "Escape = pause"
 
+[node name="Quit" type="Button" parent="Container/Footer/HBoxContainer"]
+custom_minimum_size = Vector2(256, 64)
+offset_left = 1600.0
+offset_right = 1856.0
+offset_bottom = 64.0
+size_flags_horizontal = 10
+text = "Quit"
+
 [connection signal="pressed" from="Container/Main/HBoxContainer/Play" to="." method="onPlayPressed"]
+[connection signal="pressed" from="Container/Footer/HBoxContainer/Quit" to="." method="onQuitPressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8be6emb0fkvy"
-path="res://.godot/imported/sphere2.jpg-d717956ff9a6ffdbd409f26e50820d34.ctex"
+uid="uid://ilesp1yqlhdu"
+path="res://.godot/imported/Base_metallic.jpg-d8c5dda9ed86e56d87abab6cd8037d94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dice/textures/sphere2.jpg"
-dest_files=["res://.godot/imported/sphere2.jpg-d717956ff9a6ffdbd409f26e50820d34.ctex"]
+source_file="res://die/textures/Base_metallic.jpg"
+dest_files=["res://.godot/imported/Base_metallic.jpg-d8c5dda9ed86e56d87abab6cd8037d94.ctex"]
 
 [params]
 

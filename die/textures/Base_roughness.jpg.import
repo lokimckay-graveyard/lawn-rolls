@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk6i86a5lvnmu"
-path.s3tc="res://.godot/imported/Base_albedo.jpg-4eb6c24a3845b700c9f21a5ce795e559.s3tc.ctex"
-path.etc2="res://.godot/imported/Base_albedo.jpg-4eb6c24a3845b700c9f21a5ce795e559.etc2.ctex"
+uid="uid://dcr3myerwmndv"
+path.s3tc="res://.godot/imported/Base_roughness.jpg-c2dc879592bd0bbc17ca7894b531f2dd.s3tc.ctex"
+path.etc2="res://.godot/imported/Base_roughness.jpg-c2dc879592bd0bbc17ca7894b531f2dd.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://dice/textures/Base_albedo.jpg"
-dest_files=["res://.godot/imported/Base_albedo.jpg-4eb6c24a3845b700c9f21a5ce795e559.s3tc.ctex", "res://.godot/imported/Base_albedo.jpg-4eb6c24a3845b700c9f21a5ce795e559.etc2.ctex"]
+source_file="res://die/textures/Base_roughness.jpg"
+dest_files=["res://.godot/imported/Base_roughness.jpg-c2dc879592bd0bbc17ca7894b531f2dd.s3tc.ctex", "res://.godot/imported/Base_roughness.jpg-c2dc879592bd0bbc17ca7894b531f2dd.etc2.ctex"]
 
 [params]
 

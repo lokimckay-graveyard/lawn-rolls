@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsp26jg51g3ad"]
 
-[ext_resource type="Material" uid="uid://or5ggw6huahp" path="res://level/grass_mat.tres" id="1_7yjyt"]
+[ext_resource type="Material" uid="uid://w6ah8m3s4tl6" path="res://level/grass_mat.tres" id="1_7yjyt"]
 [ext_resource type="PackedScene" uid="uid://cl8q5ngldgyc0" path="res://flag/flag.tscn" id="1_vi05d"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bwdvn"]
@@ -11,7 +11,6 @@ size = Vector2(1, 1)
 [node name="Level" type="Node3D"]
 
 [node name="Flag" parent="." instance=ExtResource("1_vi05d")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)

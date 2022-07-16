@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b85q53d7u8lqc"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://dkh4mccwd2dur" path="res://die/die_physics_material.tres" id="1_cef2v"]
+[ext_resource type="Script" path="res://die/die.gd" id="2_2tfys"]
+[ext_resource type="PackedScene" uid="uid://c7eq1muxvg4um" path="res://die/die_lowpoly.blend" id="2_r245e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_elxtx"]
+
+[node name="Die" type="RigidDynamicBody3D"]
+physics_material_override = ExtResource("1_cef2v")
+gravity_scale = 5.0
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource("2_2tfys")
+metadata/name = "die"
+
+[node name="Mesh" parent="." instance=ExtResource("2_r245e")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_elxtx")
+
+[connection signal="body_entered" from="." to="." method="onBodyEntered"]
+[connection signal="sleeping_state_changed" from="." to="." method="onSleepingStateChanged"]

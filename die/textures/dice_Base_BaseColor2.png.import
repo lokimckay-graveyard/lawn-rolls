@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcr3myerwmndv"
-path.s3tc="res://.godot/imported/Base_roughness.jpg-d72d41b826bedba2730643698803acd0.s3tc.ctex"
-path.etc2="res://.godot/imported/Base_roughness.jpg-d72d41b826bedba2730643698803acd0.etc2.ctex"
+uid="uid://cata4bfvhgs6i"
+path.s3tc="res://.godot/imported/dice_Base_BaseColor2.png-a6318617109c46a1d5f79c000cf7d3c7.s3tc.ctex"
+path.etc2="res://.godot/imported/dice_Base_BaseColor2.png-a6318617109c46a1d5f79c000cf7d3c7.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://dice/textures/Base_roughness.jpg"
-dest_files=["res://.godot/imported/Base_roughness.jpg-d72d41b826bedba2730643698803acd0.s3tc.ctex", "res://.godot/imported/Base_roughness.jpg-d72d41b826bedba2730643698803acd0.etc2.ctex"]
+source_file="res://die/textures/dice_Base_BaseColor2.png"
+dest_files=["res://.godot/imported/dice_Base_BaseColor2.png-a6318617109c46a1d5f79c000cf7d3c7.s3tc.ctex", "res://.godot/imported/dice_Base_BaseColor2.png-a6318617109c46a1d5f79c000cf7d3c7.etc2.ctex"]
 
 [params]
 

@@ -7,6 +7,18 @@ func mainMenu():
 func pauseMenu():
 	return get_node("/root/Main/Pause")
 
+func gun():
+	return get_node("/root/Main/Gun")
+
+func aim():
+	return get_node("/root/Main/Gun/Aim")
+
+func aimDir():
+	return -aim().global_transform.basis.z
+
+func aimDeg():
+	return gun().basis.get_euler().y
+
 func mainCam(): 
 	return get_node("/root/Main/Camera")
 
@@ -22,3 +34,8 @@ func mainCamPlane():
 	camRight.y = 0
 	return [camForward, camRight, camYRot]
 
+func level():
+	return get_node("/root/Main/Level")
+
+func ground():
+	return get_node("/root/Main/Level/Ground")

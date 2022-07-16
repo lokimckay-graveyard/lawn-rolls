@@ -5,10 +5,10 @@
 [node name="Camera" type="Node3D"]
 script = ExtResource("1_bqmth")
 
-[node name="Pivot" type="Node3D" parent="."]
-transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 0, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.353553, 0.612373, 0, 0.866026, 0.499999, -0.707107, -0.353553, 0.612373, 30.6186, 25, 30.6186)
 projection = 1
-size = 15.0
+size = 25.0
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.499999, -0.707107, -0.353553, 0.612372, 0, 0, 0)

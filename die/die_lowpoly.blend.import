@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c7eq1muxvg4um"
-path="res://.godot/imported/dice_lowpoly.blend-e9eee7501a1c3daa272942f5280a182b.scn"
+path="res://.godot/imported/die_lowpoly.blend-0ea5ec6a58dc41c32cd2cf8a6b209c93.scn"
 
 [deps]
 
-source_file="res://dice/dice_lowpoly.blend"
-dest_files=["res://.godot/imported/dice_lowpoly.blend-e9eee7501a1c3daa272942f5280a182b.scn"]
+source_file="res://die/die_lowpoly.blend"
+dest_files=["res://.godot/imported/die_lowpoly.blend-0ea5ec6a58dc41c32cd2cf8a6b209c93.scn"]
 
 [params]
 

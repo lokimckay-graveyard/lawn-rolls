@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cata4bfvhgs6i"
-path.s3tc="res://.godot/imported/dice_Base_BaseColor2.png-a8a96a1170af74c45d668b911dbb7d9b.s3tc.ctex"
-path.etc2="res://.godot/imported/dice_Base_BaseColor2.png-a8a96a1170af74c45d668b911dbb7d9b.etc2.ctex"
+uid="uid://dk6i86a5lvnmu"
+path.s3tc="res://.godot/imported/Base_albedo.jpg-e35dced99f7b97400eada84c725614a2.s3tc.ctex"
+path.etc2="res://.godot/imported/Base_albedo.jpg-e35dced99f7b97400eada84c725614a2.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://dice/textures/dice_Base_BaseColor2.png"
-dest_files=["res://.godot/imported/dice_Base_BaseColor2.png-a8a96a1170af74c45d668b911dbb7d9b.s3tc.ctex", "res://.godot/imported/dice_Base_BaseColor2.png-a8a96a1170af74c45d668b911dbb7d9b.etc2.ctex"]
+source_file="res://die/textures/Base_albedo.jpg"
+dest_files=["res://.godot/imported/Base_albedo.jpg-e35dced99f7b97400eada84c725614a2.s3tc.ctex", "res://.godot/imported/Base_albedo.jpg-e35dced99f7b97400eada84c725614a2.etc2.ctex"]
 
 [params]
 

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://j2c3lo6qnpes"]
+
+[ext_resource type="Script" path="res://gun/gun.gd" id="1_5d8mf"]
+[ext_resource type="Material" uid="uid://boqg6fx3oim1i" path="res://gun/gun_mat.tres" id="2_dic2x"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b7yoy"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_1ymvu"]
+
+[node name="Gun" type="Node3D"]
+script = ExtResource("1_5d8mf")
+
+[node name="SpawnPoint" type="Position3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 20)
+
+[node name="Aim" type="Node3D" parent="."]
+
+[node name="Indicator" type="Node3D" parent="Aim"]
+
+[node name="Body" type="MeshInstance3D" parent="Aim/Indicator"]
+transform = Transform3D(0.65, 0, 0, 0, 0.25, 0, 0, 0, 50, 0, 0.125, 26.5)
+mesh = SubResource("BoxMesh_b7yoy")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("2_dic2x")
+
+[node name="Head" type="MeshInstance3D" parent="Aim/Indicator"]
+transform = Transform3D(1.75, 0, 0, 0, -6.55671e-08, 0.25, 0, -1.5, -1.09278e-08, 0, 0.125, 0.75)
+mesh = SubResource("PrismMesh_1ymvu")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("2_dic2x")
