@@ -1,0 +1,6 @@
+[gd_resource type="Font" load_steps=2 format=3]
+
+[ext_resource type="FontData" path="res://ui/fonts/BOOKOS.TTF" id="1_1u6gr"]
+
+[resource]
+data/0 = ExtResource("1_1u6gr")

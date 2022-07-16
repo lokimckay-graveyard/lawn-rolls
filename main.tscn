@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://brasyqrg6nhso"]
+
+[ext_resource type="PackedScene" uid="uid://dv165bu1cf8jx" path="res://ui/menu/menu.tscn" id="1_5lqi6"]
+[ext_resource type="PackedScene" uid="uid://cm4jxgdnsomk1" path="res://camera/camera.tscn" id="1_mp4jy"]
+[ext_resource type="PackedScene" uid="uid://dsp26jg51g3ad" path="res://level/level.tscn" id="1_ogwgx"]
+[ext_resource type="PackedScene" uid="uid://cc305qu2sxw2j" path="res://ui/pause/pause.tscn" id="2_irdqb"]
+[ext_resource type="PackedScene" uid="uid://ixmg6mo66nv3" path="res://dice/dice.tscn" id="3_ojeuo"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Menu" parent="." instance=ExtResource("1_5lqi6")]
+
+[node name="Pause" parent="." instance=ExtResource("2_irdqb")]
+
+[node name="Camera" parent="." instance=ExtResource("1_mp4jy")]
+
+[node name="Level" parent="." instance=ExtResource("1_ogwgx")]
+
+[node name="Dice" parent="." instance=ExtResource("3_ojeuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01231, 4.5991, 0)

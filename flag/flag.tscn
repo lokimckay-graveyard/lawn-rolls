@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl8q5ngldgyc0"]
+
+[ext_resource type="ArrayMesh" uid="uid://cnm23c1troe0i" path="res://flag/objFlag.obj" id="1_1a0f2"]
+[ext_resource type="Material" uid="uid://dcjk4ooxtu3k6" path="res://flag/flag_mat.tres" id="2_qkjpo"]
+
+[node name="Flag" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.25, 0)
+mesh = ExtResource("1_1a0f2")
+surface_material_override/0 = ExtResource("2_qkjpo")
+surface_material_override/1 = ExtResource("2_qkjpo")
+surface_material_override/2 = ExtResource("2_qkjpo")

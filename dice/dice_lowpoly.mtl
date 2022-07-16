@@ -1,0 +1,15 @@
+# Blender MTL File: 'dice_lowpoly.blend'
+# Material Count: 1
+
+newmtl White
+Ns 250.000000
+Ka 0.058333 0.058333 0.058333
+Kd 0.800000 0.800000 0.800000
+Ks 0.108333 0.108333 0.108333
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 3
+map_Bump Tex\\textures\\Base_normal.jpg
+map_Ns Tex\\textures\\Base_roughness.jpg
+refl Tex\\textures\\Base_metallic.jpg

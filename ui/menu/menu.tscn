@@ -1,0 +1,118 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv165bu1cf8jx"]
+
+[ext_resource type="Font" path="res://ui/fonts/bookman_old_style.tres" id="1_cbowp"]
+[ext_resource type="Script" path="res://ui/menu/menu.gd" id="1_rw2fg"]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_rw2fg")
+
+[node name="Container" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Main" type="VBoxContainer" parent="Container"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 1888.0
+offset_bottom = 1048.0
+mouse_filter = 2
+theme_override_constants/separation = 32
+
+[node name="Title" type="Label" parent="Container/Main"]
+offset_right = 1856.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("1_cbowp")
+theme_override_font_sizes/font_size = 64
+text = "Lawn Rolls"
+
+[node name="Description" type="Label" parent="Container/Main"]
+offset_top = 111.0
+offset_right = 1856.0
+offset_bottom = 207.0
+theme_override_fonts/font = ExtResource("1_cbowp")
+theme_override_font_sizes/font_size = 24
+text = "Turn-based multiplayer
+Try to get your dice close to the flag!
+Knock other dice away from the flag!"
+
+[node name="Form" type="VBoxContainer" parent="Container/Main"]
+offset_top = 239.0
+offset_right = 1856.0
+offset_bottom = 331.0
+theme_override_constants/separation = 8
+
+[node name="NumPlayers" type="HBoxContainer" parent="Container/Main/Form"]
+offset_right = 1856.0
+offset_bottom = 42.0
+
+[node name="Label" type="Label" parent="Container/Main/Form/NumPlayers"]
+offset_right = 134.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_cbowp")
+theme_override_font_sizes/font_size = 32
+text = "Players: "
+
+[node name="Input" type="SpinBox" parent="Container/Main/Form/NumPlayers"]
+offset_left = 138.0
+offset_right = 221.0
+offset_bottom = 42.0
+min_value = 1.0
+max_value = 4.0
+value = 1.0
+
+[node name="NumAI" type="HBoxContainer" parent="Container/Main/Form"]
+offset_top = 50.0
+offset_right = 1856.0
+offset_bottom = 92.0
+
+[node name="Label" type="Label" parent="Container/Main/Form/NumAI"]
+offset_right = 70.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_cbowp")
+theme_override_font_sizes/font_size = 32
+text = "AIs: "
+
+[node name="Input" type="SpinBox" parent="Container/Main/Form/NumAI"]
+offset_left = 74.0
+offset_right = 157.0
+offset_bottom = 42.0
+min_value = 1.0
+max_value = 4.0
+value = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/Main"]
+offset_top = 363.0
+offset_right = 1856.0
+offset_bottom = 427.0
+
+[node name="Play" type="Button" parent="Container/Main/HBoxContainer"]
+custom_minimum_size = Vector2(256, 64)
+offset_right = 256.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("1_cbowp")
+theme_override_font_sizes/font_size = 32
+text = "Let's Go!"
+
+[node name="Footer" type="VBoxContainer" parent="Container"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 1888.0
+offset_bottom = 1048.0
+mouse_filter = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="Container/Footer"]
+offset_top = 984.0
+offset_right = 1856.0
+offset_bottom = 1016.0
+theme_override_fonts/font = ExtResource("1_cbowp")
+theme_override_font_sizes/font_size = 24
+text = "Escape = pause"
+
+[connection signal="pressed" from="Container/Main/HBoxContainer/Play" to="." method="onPlayPressed"]
