@@ -13,7 +13,7 @@ size = Vector2(1, 1)
 [node name="Flag" parent="." instance=ExtResource("1_vi05d")]
 
 [node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0, 0, 0)
 
 [node name="GroundMesh" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("PlaneMesh_bwdvn")

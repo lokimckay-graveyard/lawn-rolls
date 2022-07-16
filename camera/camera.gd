@@ -4,6 +4,7 @@ extends Node3D
 @export var sensitivity = 0.1
 @export var minPitch = -90
 @export var maxPitch = -20
+@export var disablePitch = true
 
 var yaw
 var pitch
@@ -22,6 +23,6 @@ func _input(event):
 func _physics_process(_delta):
 	if(!active): return
 	$Pivot.rotation.y = deg2rad(yaw)
-	$Pivot.rotation.x = deg2rad(pitch)
+	if(!disablePitch): $Pivot.rotation.x = deg2rad(pitch)
 
 func setOrbit(newValue): active = newValue

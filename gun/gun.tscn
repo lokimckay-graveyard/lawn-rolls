@@ -11,7 +11,7 @@
 script = ExtResource("1_5d8mf")
 
 [node name="SpawnPoint" type="Position3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 25)
 
 [node name="Aim" type="Node3D" parent="."]
 

@@ -3,7 +3,6 @@ extends Node3D
 @export var pushForce = 30
 @export var spinForce = 20
 
-var active = false
 var dice = preload("res://die/die.tscn")
 
 func _ready():
@@ -28,6 +27,4 @@ func shoot():
 	newDie.angular_velocity = rotatedVec * spinForce
 	Ref.level().add_child(newDie)
 
-func setActive(newValue):
-	visible = newValue
-	active = newValue
+func setActive(newValue): visible = newValue
