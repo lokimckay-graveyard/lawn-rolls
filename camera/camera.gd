@@ -5,6 +5,7 @@ extends Node3D
 @export var minPitch = -90
 @export var maxPitch = -20
 @export var disablePitch = true
+@export var aiSpinSpeed = 45
 
 var yaw
 var pitch
@@ -15,10 +16,15 @@ func _ready():
 
 func _input(event):
 	if(!active): return
+	if(Game.currentContenderType != "player"): return
 	if event is InputEventMouseMotion:
 		yaw += -1 * event.relative.x * sensitivity
 		pitch += event.relative.y * sensitivity
 		pitch = clamp(pitch, minPitch, maxPitch)
+
+func _process(delta):
+	if(Game.currentContenderType != "AI"): return
+	yaw += aiSpinSpeed * delta
 
 func _physics_process(_delta):
 	if(!active): return

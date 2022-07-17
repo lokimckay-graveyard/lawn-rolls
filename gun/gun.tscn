@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://j2c3lo6qnpes"]
+[gd_scene load_steps=9 format=3 uid="uid://j2c3lo6qnpes"]
 
 [ext_resource type="Script" path="res://gun/gun.gd" id="1_5d8mf"]
-[ext_resource type="Material" uid="uid://boqg6fx3oim1i" path="res://gun/gun_mat.tres" id="2_dic2x"]
+[ext_resource type="Script" path="res://gun/indicator.gd" id="2_bgqqy"]
 [ext_resource type="PackedScene" uid="uid://ceamgyljcdmd0" path="res://ui/spin_meter/spin_meter.tscn" id="3_7knch"]
-[ext_resource type="Material" uid="uid://chqh601riveet" path="res://ui/spin_meter/spin_meter_shader_mat.tres" id="3_8gxe1"]
+[ext_resource type="Material" uid="uid://bjg05r7np8qtl" path="res://gun/indicator_mat.tres" id="4_biphc"]
 [ext_resource type="Script" path="res://gun/indicator_path.gd" id="4_g03b3"]
+[ext_resource type="PackedScene" uid="uid://c0h4nxae5m6u8" path="res://ui/power_meter/power_meter.tscn" id="5_hc06u"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_1ymvu"]
 
@@ -22,6 +23,7 @@ script = ExtResource("1_5d8mf")
 
 [node name="Indicator" type="Node3D" parent="Aim"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+script = ExtResource("2_bgqqy")
 
 [node name="Head" type="Node3D" parent="Aim/Indicator"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
@@ -30,10 +32,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 transform = Transform3D(3, 0, 0, 0, -6.55671e-08, 0.25, 0, -1.5, -1.09278e-08, 0, 0.125, -0.75)
 mesh = SubResource("PrismMesh_1ymvu")
 skeleton = NodePath("../../../..")
-surface_material_override/0 = ExtResource("2_dic2x")
+surface_material_override/0 = ExtResource("4_biphc")
 
 [node name="Body" type="CSGPolygon3D" parent="Aim/Indicator"]
-material_override = ExtResource("3_8gxe1")
 polygon = PackedVector2Array(-0.5, 0, -0.5, 0.25, 0.5, 0.25, 0.5, 0)
 mode = 2
 path_node = NodePath("../../../Path3D")
@@ -45,13 +46,17 @@ path_local = false
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
+material = ExtResource("4_biphc")
 
 [node name="SpawnPoint" type="Position3D" parent="Aim"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 15)
-
-[node name="SpinMeter" parent="." instance=ExtResource("3_7knch")]
 
 [node name="Path3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_x7onl")
 script = ExtResource("4_g03b3")
 bendiness = 0.5
+
+[node name="SpinMeter" parent="." instance=ExtResource("3_7knch")]
+
+[node name="PowerMeter" parent="." instance=ExtResource("5_hc06u")]
+mouse_filter = 2

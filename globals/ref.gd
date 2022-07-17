@@ -37,5 +37,11 @@ func mainCamPlane():
 func level():
 	return get_node("/root/Main/Level")
 
+func dice():
+	return get_node("/root/Main/Dice")
+
 func ground():
 	return get_node("/root/Main/Level/Ground")
+
+func colours():
+	return get_node("/root/Colours")

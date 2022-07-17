@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bjg05r7np8qtl"]
+
+[ext_resource type="Shader" uid="uid://dgldal8npu62l" path="res://gun/indicator_shader.tres" id="1_oil3e"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_oil3e")
+shader_param/Alpha = 0.85
+shader_param/Base = Color(0.855469, 0.855469, 0.855469, 1)
+shader_param/HighPower = Color(1, 0.17413, 0, 1)
+shader_param/LowPower = Color(0.267861, 1, 0, 1)
+shader_param/Position = 35.0
+shader_param/Power = 0.0

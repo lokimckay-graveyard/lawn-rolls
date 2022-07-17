@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbor3wrjs36ev"]
+[gd_scene load_steps=6 format=3 uid="uid://bbor3wrjs36ev"]
 
 [ext_resource type="PackedScene" uid="uid://dv165bu1cf8jx" path="res://ui/menu/menu.tscn" id="1_5lqi6"]
 [ext_resource type="PackedScene" uid="uid://cm4jxgdnsomk1" path="res://camera/camera.tscn" id="1_mp4jy"]
 [ext_resource type="PackedScene" uid="uid://dsp26jg51g3ad" path="res://level/level.tscn" id="1_ogwgx"]
 [ext_resource type="PackedScene" uid="uid://cc305qu2sxw2j" path="res://ui/pause/pause.tscn" id="2_irdqb"]
-[ext_resource type="PackedScene" uid="uid://b85q53d7u8lqc" path="res://die/die.tscn" id="3_ojeuo"]
 [ext_resource type="PackedScene" uid="uid://j2c3lo6qnpes" path="res://gun/gun.tscn" id="5_alhne"]
 
 [node name="Main" type="Node3D"]
@@ -19,5 +18,4 @@
 
 [node name="Gun" parent="." instance=ExtResource("5_alhne")]
 
-[node name="Die" parent="." instance=ExtResource("3_ojeuo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26334, 0)
+[node name="Dice" type="Node3D" parent="."]

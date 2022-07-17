@@ -12,7 +12,7 @@ func _ready():
 	setActive(false)
 
 func _process(delta):
-	if(!Game.playing): return
+	if(!Game.playing || !visible): return
 	var pos = indicator.position.x
 	
 	if (pos >= meterSize - indicator.size.x): direction = -1
@@ -22,4 +22,8 @@ func _process(delta):
 	value = (clamp(newPos / meterSize, 0, 1) - 0.5) * 2
 	indicator.position.x = newPos
 
-func setActive(newValue): visible = newValue
+func setActive(newValue):
+	visible = newValue
+	if(!newValue):
+		value = 0
+		indicator.position.x = (meterSize / 2) - (indicator.size.x / 2)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0h4nxae5m6u8"]
+
+[ext_resource type="Font" path="res://ui/fonts/bookman_old_style.tres" id="1_io6pv"]
+[ext_resource type="Script" path="res://ui/power_meter/power_meter.gd" id="1_x8m5o"]
+
+[node name="PowerMeter" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+script = ExtResource("1_x8m5o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 890.0
+offset_top = 32.0
+offset_right = 1030.0
+offset_bottom = 1048.0
+size_flags_horizontal = 4
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+offset_top = 955.0
+offset_right = 140.0
+offset_bottom = 1016.0
+theme_override_fonts/font = ExtResource("1_io6pv")
+theme_override_font_sizes/font_size = 48
+text = "Power
+"

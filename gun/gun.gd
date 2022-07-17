@@ -1,11 +1,12 @@
 extends Node3D
 
-@export var pushForce = 30
+@export var minPushForce = 20
+@export var maxPushForce = 40
 @export var spinForce = 30
 
 var dice = preload("res://die/die.tscn")
 
-var state = "aiming" # aiming / powering
+var state = "aiming" # disabled / aiming / powering
 var aimedSpawn
 var aimedBasis
 var aimedDir
@@ -13,14 +14,13 @@ var aimedSpin
 
 func _ready():
 	Game.connect("new_match", onNewMatch)
+	Game.connect("new_turn", onNewTurn)
 	switchState("disabled")
 
 func _process(_delta):
 	if(!Game.playing): return
 	if(state == "aiming"): aim()
 	elif(state == "powering"): power()
-
-func onNewMatch(_players, _ai): switchState("aiming")
 
 func aim():
 	$Aim.rotation.y = Ref.mainCamPlane()[2]
@@ -39,18 +39,42 @@ func lockAim():
 	switchState("powering")
 
 func power():
-	if (Input.is_action_just_pressed("shoot")): shoot()
+	$Aim/Indicator.setFill($PowerMeter.value)
+	if (Input.is_action_just_pressed("shoot")): shoot($PowerMeter.value)
 
-func shoot():
+func shoot(_power):
+	var pushForce = lerp(minPushForce, maxPushForce, _power)
 	var newDie = dice.instantiate()
 	newDie.position = aimedSpawn
 	newDie.basis = aimedBasis
 	newDie.apply_impulse(aimedDir * pushForce)
 	newDie.angular_velocity = aimedSpin * spinForce
-	Ref.level().add_child(newDie)
+	newDie.connect("finished_rolling", onDieStopped)
+	newDie.setOwner(Game.currentContender.index)
+	Ref.dice().add_child(newDie)
 	switchState("disabled")
 
 func switchState(newState):
 	$SpinMeter.setActive(newState == "aiming")
+	$PowerMeter.setActive(newState == "powering")
 	visible = newState != "disabled"
+	if (newState == "disabled"):
+		$Path3D.bend(0)
+		$Aim/Indicator.setFill(0)
 	state = newState
+
+func onDieStopped(result):
+	Game.turnResult(result)
+
+func onNewMatch(_playersAndAI): switchState("aiming")
+func onNewTurn(_turnCount, player):
+	switchState("aiming")
+	if(player.type == "AI"): takeAITurn()
+
+func takeAITurn():
+	print("AI is aiming...")
+	await get_tree().create_timer(randf_range(0.5, 1)).timeout
+	lockAim()
+	print("AI is powering...")
+	await get_tree().create_timer(randf_range(0.5, 1)).timeout
+	shoot($PowerMeter.value)

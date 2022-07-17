@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddwn57g51a268"]
+
+[ext_resource type="Script" path="res://globals/colours.gd" id="1_7mtrq"]
+
+[node name="Colours" type="Node"]
+script = ExtResource("1_7mtrq")
+contenderColours = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1)
