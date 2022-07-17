@@ -9,6 +9,6 @@ script = ExtResource("1_bqmth")
 transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.499999, -0.707107, -0.353553, 0.612372, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, -2.08616e-07, 0, 4.47035e-07, 1, 0, 0, 100)
+transform = Transform3D(1, 0, 0, 0, 1, -1.78814e-07, 0, 4.17233e-07, 1, 0, -3.8147e-06, 100)
 fov = 10.0
 size = 25.0

@@ -4,11 +4,11 @@
 [ext_resource type="Script" path="res://die/die.gd" id="2_2tfys"]
 [ext_resource type="PackedScene" uid="uid://c7eq1muxvg4um" path="res://die/die_lowpoly.blend" id="2_r245e"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_elxtx"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_babja"]
 
 [node name="Die" type="RigidDynamicBody3D"]
 physics_material_override = ExtResource("1_cef2v")
-gravity_scale = 5.0
+gravity_scale = 10.0
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource("2_2tfys")
@@ -18,7 +18,7 @@ metadata/name = "die"
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_elxtx")
+shape = SubResource("BoxShape3D_babja")
 
 [connection signal="body_entered" from="." to="." method="onBodyEntered"]
 [connection signal="sleeping_state_changed" from="." to="." method="onSleepingStateChanged"]

@@ -21,12 +21,3 @@
 
 [node name="Die" parent="." instance=ExtResource("3_ojeuo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26334, 0)
-
-[node name="Die2" parent="." instance=ExtResource("3_ojeuo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26334, 2.627)
-
-[node name="Die3" parent="." instance=ExtResource("3_ojeuo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26334, 5.44591)
-
-[node name="Die4" parent="." instance=ExtResource("3_ojeuo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26334, 7.88527)

@@ -17,7 +17,7 @@ func aimDir():
 	return -aim().global_transform.basis.z
 
 func aimDeg():
-	return gun().basis.get_euler().y
+	return aim().basis.get_euler().y
 
 func mainCam(): 
 	return get_node("/root/Main/Camera")

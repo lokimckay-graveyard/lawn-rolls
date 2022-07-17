@@ -1,19 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsp26jg51g3ad"]
+[gd_scene load_steps=9 format=3 uid="uid://dsp26jg51g3ad"]
 
 [ext_resource type="Material" uid="uid://w6ah8m3s4tl6" path="res://level/grass_mat.tres" id="1_7yjyt"]
 [ext_resource type="PackedScene" uid="uid://cl8q5ngldgyc0" path="res://flag/flag.tscn" id="1_vi05d"]
+[ext_resource type="PackedScene" uid="uid://b85q53d7u8lqc" path="res://die/die.tscn" id="3_vw3r7"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bwdvn"]
 size = Vector2(1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_30bj3"]
+size = Vector3(1, 50, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2dmus"]
+sky_top_color = Color(0.47451, 0.85098, 0.878431, 1)
+sky_horizon_color = Color(0.835294, 0.937255, 0.945098, 1)
+ground_bottom_color = Color(0.47451, 0.85098, 0.878431, 1)
+ground_horizon_color = Color(0.835294, 0.937255, 0.945098, 1)
+
+[sub_resource type="Sky" id="Sky_nxkhv"]
+sky_material = SubResource("ProceduralSkyMaterial_2dmus")
+
+[sub_resource type="Environment" id="Environment_qoopt"]
+background_mode = 2
+sky = SubResource("Sky_nxkhv")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.25
+tonemap_mode = 3
 
 [node name="Level" type="Node3D"]
 
 [node name="Flag" parent="." instance=ExtResource("1_vi05d")]
 
 [node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0, 0, 0)
+transform = Transform3D(80, 0, 0, 0, 1, 0, 0, 0, 80, 0, 0, 0)
 
 [node name="GroundMesh" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("PlaneMesh_bwdvn")
@@ -21,8 +40,17 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("1_7yjyt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25, 0)
 shape = SubResource("BoxShape3D_30bj3")
+
+[node name="Die" parent="." instance=ExtResource("3_vw3r7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.49077, 2.91963, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 10, 0)
+light_energy = 0.25
+shadow_enabled = true
+directional_shadow_max_distance = 1000.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qoopt")

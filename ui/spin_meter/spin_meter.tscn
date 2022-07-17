@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceamgyljcdmd0"]
+
+[ext_resource type="Script" path="res://ui/spin_meter/spin_meter.gd" id="1_ckwlv"]
+[ext_resource type="Texture2D" uid="uid://5yp580nxdt6y" path="res://ui/spin_meter/spin_meter.png" id="1_iihki"]
+[ext_resource type="Texture2D" uid="uid://bjs7gmwalhk7j" path="res://ui/spin_meter/spin_meter_indicator.png" id="2_q4yla"]
+[ext_resource type="Font" path="res://ui/fonts/bookman_old_style.tres" id="4_om2k5"]
+
+[node name="SpinMeter" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+script = ExtResource("1_ckwlv")
+
+[node name="CenterContainer" type="VBoxContainer" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 1888.0
+offset_bottom = 1048.0
+mouse_filter = 2
+alignment = 2
+
+[node name="Meter" type="Control" parent="CenterContainer"]
+offset_top = 1016.0
+offset_right = 1856.0
+offset_bottom = 1016.0
+
+[node name="Container" type="Control" parent="CenterContainer/Meter"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -600.0
+offset_top = -200.0
+offset_right = 600.0
+
+[node name="Scale" type="Control" parent="CenterContainer/Meter/Container"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+scale = Vector2(1, 0.25)
+
+[node name="Meter" type="TextureRect" parent="CenterContainer/Meter/Container/Scale"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -600.0
+offset_top = -200.0
+offset_right = 600.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_iihki")
+metadata/_edit_layout_mode = 1
+
+[node name="Indicator" type="TextureRect" parent="CenterContainer/Meter/Container/Scale"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -200.0
+offset_right = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(35, 0)
+size_flags_horizontal = 4
+texture = ExtResource("2_q4yla")
+metadata/_edit_layout_mode = 1
+
+[node name="CurveLeft" type="Label" parent="CenterContainer/Meter/Container"]
+offset_top = 75.0
+offset_right = 227.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("4_om2k5")
+theme_override_font_sizes/font_size = 48
+text = "Curve left"
+
+[node name="CurveRight" type="Label" parent="CenterContainer/Meter/Container"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -266.0
+offset_top = 75.0
+offset_bottom = 136.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("4_om2k5")
+theme_override_font_sizes/font_size = 48
+text = "Curve right"
+metadata/_edit_layout_mode = 1

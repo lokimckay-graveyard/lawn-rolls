@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://chqh601riveet"]
+
+[ext_resource type="Shader" uid="uid://dty3n01bq2rbv" path="res://ui/spin_meter/spin_meter_shader.tres" id="1_kb5e0"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kb5e0")
+shader_param/Base = Color(1, 1, 1, 1)
+shader_param/Position = 25.0
+shader_param/Power = Color(1, 0, 0, 1)
