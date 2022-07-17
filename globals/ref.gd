@@ -43,5 +43,8 @@ func dice():
 func ground():
 	return get_node("/root/Main/Level/Ground")
 
+func decorative():
+	return get_node("/root/Main/Level/Decorative")
+
 func colours():
 	return get_node("/root/Colours")

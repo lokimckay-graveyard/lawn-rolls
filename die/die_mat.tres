@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://gsxwr736eidc"]
+
+[ext_resource type="Texture2D" uid="uid://cata4bfvhgs6i" path="res://die/textures/white_albedo.png" id="1_fxc86"]
+[ext_resource type="Texture2D" uid="uid://db43vppwqcohs" path="res://die/textures/Base_AO.jpg" id="2_xpmbw"]
+[ext_resource type="Texture2D" uid="uid://ilesp1yqlhdu" path="res://die/textures/Base_metallic.jpg" id="3_08k4m"]
+[ext_resource type="Texture2D" uid="uid://c6c7gy4hwkcxj" path="res://die/textures/Base_normal.jpg" id="4_ne7vb"]
+[ext_resource type="Texture2D" uid="uid://dcr3myerwmndv" path="res://die/textures/Base_roughness.jpg" id="5_7p8do"]
+
+[resource]
+resource_local_to_scene = true
+albedo_texture = ExtResource("1_fxc86")
+metallic = 1.0
+metallic_texture = ExtResource("3_08k4m")
+roughness_texture = ExtResource("5_7p8do")
+emission = Color(1, 0, 0, 1)
+normal_enabled = true
+normal_texture = ExtResource("4_ne7vb")
+ao_enabled = true
+ao_texture = ExtResource("2_xpmbw")

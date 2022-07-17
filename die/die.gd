@@ -42,5 +42,5 @@ func onSleepingStateChanged():
 		hasFinished = true
 
 func setOwner(contenderIndex):
-#	newDie.set_meta("owner", Game.currentContender.index)
-	print("AA", contenderIndex)
+	set_meta("owner", contenderIndex)
+	$Mesh.get_active_material(0).albedo_color = Colours.contenderColours[contenderIndex]

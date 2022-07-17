@@ -4,4 +4,4 @@
 
 [node name="Colours" type="Node"]
 script = ExtResource("1_7mtrq")
-contenderColours = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1)
+contenderColours = PackedColorArray(1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1)

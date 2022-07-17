@@ -1,16 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbor3wrjs36ev"]
+[gd_scene load_steps=8 format=3 uid="uid://bbor3wrjs36ev"]
 
 [ext_resource type="PackedScene" uid="uid://dv165bu1cf8jx" path="res://ui/menu/menu.tscn" id="1_5lqi6"]
 [ext_resource type="PackedScene" uid="uid://cm4jxgdnsomk1" path="res://camera/camera.tscn" id="1_mp4jy"]
 [ext_resource type="PackedScene" uid="uid://dsp26jg51g3ad" path="res://level/level.tscn" id="1_ogwgx"]
 [ext_resource type="PackedScene" uid="uid://cc305qu2sxw2j" path="res://ui/pause/pause.tscn" id="2_irdqb"]
+[ext_resource type="PackedScene" uid="uid://bbdrin7ykrcvh" path="res://ui/scores/scores.tscn" id="3_7odgf"]
+[ext_resource type="PackedScene" uid="uid://buokunwvwhc0a" path="res://ui/gameover/gameover.tscn" id="4_gfovi"]
 [ext_resource type="PackedScene" uid="uid://j2c3lo6qnpes" path="res://gun/gun.tscn" id="5_alhne"]
 
 [node name="Main" type="Node3D"]
-
-[node name="Menu" parent="." instance=ExtResource("1_5lqi6")]
-
-[node name="Pause" parent="." instance=ExtResource("2_irdqb")]
 
 [node name="Camera" parent="." instance=ExtResource("1_mp4jy")]
 
@@ -19,3 +17,11 @@
 [node name="Gun" parent="." instance=ExtResource("5_alhne")]
 
 [node name="Dice" type="Node3D" parent="."]
+
+[node name="Menu" parent="." instance=ExtResource("1_5lqi6")]
+
+[node name="Scores" parent="." instance=ExtResource("3_7odgf")]
+
+[node name="Pause" parent="." instance=ExtResource("2_irdqb")]
+
+[node name="Gameover" parent="." instance=ExtResource("4_gfovi")]

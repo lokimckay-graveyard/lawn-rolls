@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3 uid="uid://buokunwvwhc0a"]
+
+[ext_resource type="Script" path="res://ui/gameover/gameover.gd" id="1_fa7g7"]
+[ext_resource type="Font" path="res://ui/fonts/bookman_old_style.tres" id="2_liden"]
+[ext_resource type="PackedScene" uid="uid://mfs3g6rvealt" path="res://ui/gameover/winner.tscn" id="3_0ph22"]
+[ext_resource type="PackedScene" uid="uid://dywlh5yy03wjd" path="res://ui/gameover/score.tscn" id="4_p3g4m"]
+
+[node name="Gameover" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_fa7g7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="CenterContainer" type="CenterContainer" parent="Margin"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 1888.0
+offset_bottom = 1048.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/CenterContainer"]
+offset_left = 640.0
+offset_top = 285.0
+offset_right = 1216.0
+offset_bottom = 730.0
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/CenterContainer/VBoxContainer"]
+offset_right = 576.0
+offset_bottom = 184.0
+
+[node name="Title" type="Label" parent="Margin/CenterContainer/VBoxContainer/VBoxContainer"]
+offset_right = 576.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("2_liden")
+theme_override_font_sizes/font_size = 64
+text = "Victory!"
+horizontal_alignment = 1
+
+[node name="Winners" type="HBoxContainer" parent="Margin/CenterContainer/VBoxContainer/VBoxContainer"]
+offset_top = 83.0
+offset_right = 576.0
+offset_bottom = 184.0
+alignment = 1
+
+[node name="Winner" parent="Margin/CenterContainer/VBoxContainer/VBoxContainer/Winners" instance=ExtResource("3_0ph22")]
+
+[node name="Scores" type="VBoxContainer" parent="Margin/CenterContainer/VBoxContainer"]
+offset_top = 248.0
+offset_right = 576.0
+offset_bottom = 317.0
+
+[node name="Score" parent="Margin/CenterContainer/VBoxContainer/Scores" instance=ExtResource("4_p3g4m")]
+
+[node name="Buttons" type="HBoxContainer" parent="Margin/CenterContainer/VBoxContainer"]
+offset_top = 381.0
+offset_right = 576.0
+offset_bottom = 445.0
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Restart" type="Button" parent="Margin/CenterContainer/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(256, 64)
+offset_right = 256.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("2_liden")
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+
+[node name="Quit" type="Button" parent="Margin/CenterContainer/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(256, 64)
+offset_left = 320.0
+offset_right = 576.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("2_liden")
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[connection signal="pressed" from="Margin/CenterContainer/VBoxContainer/Buttons/Restart" to="." method="onRestartPressed"]
+[connection signal="pressed" from="Margin/CenterContainer/VBoxContainer/Buttons/Quit" to="." method="onQuitPressed"]

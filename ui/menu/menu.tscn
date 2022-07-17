@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dv165bu1cf8jx"]
+[gd_scene load_steps=4 format=3 uid="uid://dv165bu1cf8jx"]
 
 [ext_resource type="Font" path="res://ui/fonts/bookman_old_style.tres" id="1_cbowp"]
 [ext_resource type="Script" path="res://ui/menu/menu.gd" id="1_rw2fg"]
+[ext_resource type="Script" path="res://ui/menu/link.gd" id="3_l2jn5"]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -15,6 +16,27 @@ theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
+
+[node name="Control" type="HBoxContainer" parent="Container"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 1888.0
+offset_bottom = 1048.0
+mouse_filter = 2
+alignment = 2
+
+[node name="Label" type="RichTextLabel" parent="Container/Control"]
+custom_minimum_size = Vector2(380, 400)
+offset_left = 1476.0
+offset_right = 1856.0
+offset_bottom = 400.0
+size_flags_vertical = 0
+theme_override_fonts/normal_font = ExtResource("1_cbowp")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "by Loki - [url=\"https://twitter.com/lokimckay\"]twitter.com/sneyed[/url]
+"
+script = ExtResource("3_l2jn5")
 
 [node name="Main" type="VBoxContainer" parent="Container"]
 offset_left = 32.0

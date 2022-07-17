@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsp26jg51g3ad"]
+[gd_scene load_steps=8 format=3 uid="uid://dsp26jg51g3ad"]
 
 [ext_resource type="Material" uid="uid://w6ah8m3s4tl6" path="res://level/grass_mat.tres" id="1_7yjyt"]
-[ext_resource type="PackedScene" uid="uid://cl8q5ngldgyc0" path="res://flag/flag.tscn" id="1_vi05d"]
 [ext_resource type="PackedScene" uid="uid://b85q53d7u8lqc" path="res://die/die.tscn" id="3_vw3r7"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bwdvn"]
@@ -29,8 +28,6 @@ tonemap_mode = 3
 
 [node name="Level" type="Node3D"]
 
-[node name="Flag" parent="." instance=ExtResource("1_vi05d")]
-
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(80, 0, 0, 0, 1, 0, 0, 0, 80, 0, 0, 0)
 
@@ -43,8 +40,16 @@ surface_material_override/0 = ExtResource("1_7yjyt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25, 0)
 shape = SubResource("BoxShape3D_30bj3")
 
-[node name="Die" parent="." instance=ExtResource("3_vw3r7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.49077, 2.91963, 0)
+[node name="Decorative" type="Node3D" parent="."]
+
+[node name="Die" parent="Decorative" instance=ExtResource("3_vw3r7")]
+transform = Transform3D(0.997467, -0.0711319, 0, 0.0711319, 0.997467, 0, 0, 0, 1, 6.21121, 0.838997, 0)
+
+[node name="Die2" parent="Decorative" instance=ExtResource("3_vw3r7")]
+transform = Transform3D(0.298319, 0.539202, -0.78757, -0.28251, 0.838051, 0.466753, 0.911698, 0.0832548, 0.402337, -3.92457, 1.16579, 2.76976)
+
+[node name="Die3" parent="Decorative" instance=ExtResource("3_vw3r7")]
+transform = Transform3D(-0.944101, 0.0663375, -0.322913, -0.01625, 0.968988, 0.246574, 0.329255, 0.238038, -0.913744, -1.51024, 1.20562, -2.76342)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 10, 0)

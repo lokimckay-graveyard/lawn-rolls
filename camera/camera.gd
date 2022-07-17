@@ -15,7 +15,7 @@ func _ready():
 	pitch = rad2deg($Pivot.rotation.x)
 
 func _input(event):
-	if(!active): return
+	if(!active || !Game.playing): return
 	if(Game.currentContenderType != "player"): return
 	if event is InputEventMouseMotion:
 		yaw += -1 * event.relative.x * sensitivity
@@ -23,8 +23,8 @@ func _input(event):
 		pitch = clamp(pitch, minPitch, maxPitch)
 
 func _process(delta):
-	if(Game.currentContenderType != "AI"): return
-	yaw += aiSpinSpeed * delta
+	if(Game.currentContenderType == "AI" || Game.isGameover):
+		yaw += aiSpinSpeed * delta
 
 func _physics_process(_delta):
 	if(!active): return

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://mfs3g6rvealt"]
+
+[ext_resource type="Font" path="res://ui/fonts/bookman_old_style.tres" id="1_fy08w"]
+
+[node name="Winner" type="Label"]
+offset_left = 122.0
+offset_right = 454.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("1_fy08w")
+theme_override_font_sizes/font_size = 82
+text = "Player X"
+horizontal_alignment = 1

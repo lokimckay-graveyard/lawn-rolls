@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbdrin7ykrcvh"]
+
+[ext_resource type="Font" path="res://ui/fonts/bookman_old_style.tres" id="1_kyd11"]
+[ext_resource type="Script" path="res://ui/scores/scores.gd" id="1_vtp0o"]
+
+[node name="Scores" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+script = ExtResource("1_vtp0o")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 1888.0
+offset_bottom = 1048.0
+mouse_filter = 2
+theme_override_constants/separation = 32
+
+[node name="Header" type="VBoxContainer" parent="VBox"]
+offset_right = 1856.0
+offset_bottom = 97.0
+
+[node name="Title" type="Label" parent="VBox/Header"]
+offset_left = 1701.0
+offset_right = 1856.0
+offset_bottom = 61.0
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_kyd11")
+theme_override_font_sizes/font_size = 48
+text = "Scores"
+horizontal_alignment = 2
+
+[node name="Description" type="Label" parent="VBox/Header"]
+offset_left = 1625.0
+offset_top = 65.0
+offset_right = 1856.0
+offset_bottom = 97.0
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_kyd11")
+theme_override_font_sizes/font_size = 24
+text = "Victory at 20 points"
+horizontal_alignment = 2
+
+[node name="ScoreList" type="VBoxContainer" parent="VBox"]
+offset_top = 129.0
+offset_right = 1856.0
+offset_bottom = 129.0

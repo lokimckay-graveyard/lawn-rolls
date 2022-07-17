@@ -7,6 +7,7 @@ extends Node3D
 var dice = preload("res://die/die.tscn")
 
 var state = "aiming" # disabled / aiming / powering
+var playerInControl
 var aimedSpawn
 var aimedBasis
 var aimedDir
@@ -25,7 +26,7 @@ func _process(_delta):
 func aim():
 	$Aim.rotation.y = Ref.mainCamPlane()[2]
 	$Path3D.bend($SpinMeter.value)
-	if (Input.is_action_just_pressed("shoot")): lockAim()
+	if (playerInControl && Input.is_action_just_pressed("shoot")): lockAim()
 
 func lockAim():
 	aimedSpawn = $Aim/SpawnPoint.global_transform.origin
@@ -40,7 +41,7 @@ func lockAim():
 
 func power():
 	$Aim/Indicator.setFill($PowerMeter.value)
-	if (Input.is_action_just_pressed("shoot")): shoot($PowerMeter.value)
+	if (playerInControl && Input.is_action_just_pressed("shoot")): shoot($PowerMeter.value)
 
 func shoot(_power):
 	var pushForce = lerp(minPushForce, maxPushForce, _power)
@@ -55,9 +56,11 @@ func shoot(_power):
 	switchState("disabled")
 
 func switchState(newState):
+	
 	$SpinMeter.setActive(newState == "aiming")
 	$PowerMeter.setActive(newState == "powering")
 	visible = newState != "disabled"
+	if (newState == "aiming"): $Aim.rotation.y = Ref.mainCamPlane()[2]
 	if (newState == "disabled"):
 		$Path3D.bend(0)
 		$Aim/Indicator.setFill(0)
@@ -69,12 +72,13 @@ func onDieStopped(result):
 func onNewMatch(_playersAndAI): switchState("aiming")
 func onNewTurn(_turnCount, player):
 	switchState("aiming")
-	if(player.type == "AI"): takeAITurn()
+	playerInControl = Game.currentContenderType == "player"
+	if(player.type == "AI" && Game.playing): takeAITurn()
 
 func takeAITurn():
 	print("AI is aiming...")
-	await get_tree().create_timer(randf_range(0.5, 1)).timeout
+	await get_tree().create_timer(randf_range(0.5, 1), false).timeout
 	lockAim()
 	print("AI is powering...")
-	await get_tree().create_timer(randf_range(0.5, 1)).timeout
+	await get_tree().create_timer(randf_range(0.5, 1), false).timeout
 	shoot($PowerMeter.value)

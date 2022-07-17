@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cabgpxpd8r01v"]
+
+[ext_resource type="Font" path="res://ui/fonts/bookman_old_style.tres" id="1_aiqwc"]
+
+[node name="Entry" type="Label"]
+offset_left = 1676.0
+offset_top = 65.0
+offset_right = 1856.0
+offset_bottom = 107.0
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_aiqwc")
+theme_override_font_sizes/font_size = 24
+text = "Player X : 0"
+horizontal_alignment = 2
