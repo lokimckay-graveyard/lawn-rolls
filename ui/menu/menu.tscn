@@ -34,7 +34,7 @@ size_flags_vertical = 0
 theme_override_fonts/normal_font = ExtResource("1_cbowp")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "by Loki - [url=\"https://twitter.com/lokimckay\"]twitter.com/sneyed[/url]
+text = "by Loki - [url=\"https://twitter.com/sneyed\"]twitter.com/sneyed[/url]
 "
 script = ExtResource("3_l2jn5")
 

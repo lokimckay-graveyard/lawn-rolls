@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gppyooby3f1e"
+path="res://.godot/imported/sound_spark_Flatwoods_Scrub_Rock_Springs_Nature_Forest_Slight_Wind_Loop_03.mp3-145a7de3fb0aa8335a4162e2ea3a440f.mp3str"
+
+[deps]
+
+source_file="res://audio/sound_spark_Flatwoods_Scrub_Rock_Springs_Nature_Forest_Slight_Wind_Loop_03.mp3"
+dest_files=["res://.godot/imported/sound_spark_Flatwoods_Scrub_Rock_Springs_Nature_Forest_Slight_Wind_Loop_03.mp3-145a7de3fb0aa8335a4162e2ea3a440f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0

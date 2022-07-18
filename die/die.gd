@@ -20,7 +20,7 @@ func onBodyEntered(body):
 		return
 	
 	var deltaDir = (body.global_transform.origin - global_transform.origin).normalized()
-	body.apply_central_impulse(deltaDir * linear_velocity.length() * pushStrength)
+	body.apply_impulse(deltaDir * linear_velocity.length() * pushStrength, Vector3.DOWN)
 	justCollided = true
 	await get_tree().create_timer(0.1).timeout
 	justCollided = false
